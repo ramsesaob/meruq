@@ -1,0 +1,48 @@
+============================
+Select 2
+----------------------------
+- Requirements
+cakePHP 2.X.X
+
+- Intall
+
+$ cd you_app_cake2
+$ vim composer.json
+add in require line:
+
+"adrianodemoura/select2": "*"
+
+or
+
+$ composer require adrianodemoura/select2
+
+$ composer update
+
+- Usage
+
+In bootstrap.php:
+
+CakePlugin::load('Select2');
+
+in controller:
+
+<?php
+class AppController extends Controller {
+ 
+    public $helpers = ['Form', 'Html', 'Js', 'Time', 'Select2.S2Form'];
+
+?>
+
+or inside view:
+
+<?php
+
+	$this->Helpers->load('Select2.S2Form');
+
+	echo $this->S2Form->input('Model.campo', ['label'=>false, 'width'=>'resolve', 'style'=>'min-width: 200px;', 'ajax'=>['url'=>'http://site.com/controller/get_list_select2']]);
+
+?>
+
+- Como usar
+
+
